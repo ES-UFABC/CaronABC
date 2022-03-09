@@ -1,4 +1,4 @@
-# Grupo 1.13 - Carona para alunos da UFABC
+# Grupo 13 - Carona para alunos da UFABC
 1. Vinicius Castro
 1. Ian Lacerda
 1. Andre Balchiumas
