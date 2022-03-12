@@ -17,6 +17,8 @@ Ele exigirá de quem utilizá-lo que seja feito o login no portal do aluno. Toda
 
 <h2>Como Baixar</h2>
 
+O aplicativo estará disponível para baixar na Google Play Store
+
 <h2>Como instalar</h2>
 
 <h2>Como utilizar</h2>
