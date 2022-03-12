@@ -29,4 +29,8 @@ O aplicativo estará disponível para baixar na Google Play Store
 
 <h2>Como instalar</h2>
 
+A instalação seguirá a lógica do Google Play Store
+
 <h2>Como utilizar</h2>
+
+Ainda será planejado
