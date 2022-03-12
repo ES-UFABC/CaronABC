@@ -1,4 +1,10 @@
-# Grupo 13 - Carona para alunos da UFABC
+ <h2>CaronABC - Um meio de ir e voltar mais fácil ao campus</h2>
+
+Este software tem objetivo facilitar o deslocamento de alunos até o campus. É um aplicativo de caronas compartilhadas somente para alunos da UFABC.
+
+Ele exigirá de quem utilizá-lo que seja feito o login no portal do aluno. Todas as caronas serão geolocalizadas.
+
+# Grupo 13
 1. Vinicius Castro
 1. Ian Lacerda
 1. Andre Balchiumas
