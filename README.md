@@ -13,3 +13,10 @@ Ele exigirá de quem utilizá-lo que seja feito o login no portal do aluno. Toda
 1. Lorenzo Fragassi
 
 * https://docs.google.com/document/d/1BIX5BvSlgJN9AZu3mExJHMdhMfb_lnKmtDAi8wCTLLA/edit
+
+
+<h2>Como Baixar</h2>
+
+<h2>Como instalar</h2>
+
+<h2>Como utilizar</h2>
