@@ -4,7 +4,7 @@ Este software tem objetivo facilitar o deslocamento de alunos até o campus. É 
 
 Ele exigirá de quem utilizá-lo que seja feito o login no portal do aluno. Todas as caronas serão geolocalizadas.
 
-# Grupo 13
+<h3>Grupo 13</h3>
 1. Vinicius Castro
 1. Ian Lacerda
 1. Andre Balchiumas
