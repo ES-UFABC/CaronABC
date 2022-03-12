@@ -1,4 +1,4 @@
- <h2 style="color:lime-green;">CaronABC - Um meio mais fácil de ir e voltar  ao campus</h2>
+ <h2 style="color:#7FFFD4;">CaronABC - Um meio mais fácil de ir e voltar  ao campus</h2>
 
 Este software tem objetivo facilitar o deslocamento de alunos até o campus. É um aplicativo de caronas compartilhadas somente para alunos da UFABC.
 
