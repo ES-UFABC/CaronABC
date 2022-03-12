@@ -2,7 +2,7 @@
 
 Este software tem objetivo facilitar o deslocamento de alunos até o campus. É um aplicativo de caronas compartilhadas somente para alunos da UFABC.
 
-Ele exigirá de quem utilizá-lo que seja feito o login no portal do aluno. Todas as caronas serão geolocalizadas.
+Ele exigirá de quem utilizá-lo que seja feita a autenticação utilizando o e-mail institucional do aluno. Todas as caronas serão geolocalizadas.
 
 
 <h2>Inspiração para o aplicativo</h2>
