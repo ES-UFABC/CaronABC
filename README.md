@@ -7,8 +7,7 @@ Ele exigirá de quem utilizá-lo que seja feita a autenticação utilizando o e-
 
 <h2>Inspiração para o aplicativo</h2>
 
-Com as ondas de assaltos aumentando em Santo André, e alunos tendo que andar até o campus, optamos por desenvolver um aplicativo no estilo Uber ou 99taxi entre os alunos da UFABC. Para facilitar
-o acesso a faculdade, e compartilhar custos.
+Com as ondas de assaltos aumentando em Santo André, e alunos tendo que andar até o campus, optamos por desenvolver um aplicativo no estilo Uber ou 99taxi para uso dos alunos da universidade. Facilitando o acesso aos campi e diminuindo custos.
 
 <h2>Integrantes</h2>
 
