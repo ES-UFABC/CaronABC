@@ -11,19 +11,25 @@
             <column name="ID" type="NUMBER(35)">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
-            <column name="EMAIL" type="VARCHAR(255)">
-                <constraints  nullable="false" unique="true"/>
-            </column>
-            <column name="SENHA" type="VARCHAR(255)">
-                <constraints  nullable="false"/>
-            </column>
             <column name="RA" type="NUMBER(35)">
                 <constraints  nullable="false" unique="true"/>
             </column>
-            <column name="NOME" type="VARCHAR(255)">
+            <column name="USERNAME" type="VARCHAR(255)">
+                <constraints  nullable="false" unique="true"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(255)">
+                <constraints  nullable="false" unique="true"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(255)">
                 <constraints  nullable="false"/>
             </column>
-            <column name="SOBRENOME" type="VARCHAR(255)">
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+            <column name="ACCOUNT_LOCKED" type="BOOLEAN">
+                <constraints  nullable="false"/>
+            </column>
+            <column name="ACCOUNT_ENABLED" type="BOOLEAN">
                 <constraints  nullable="false"/>
             </column>
         </createTable>
