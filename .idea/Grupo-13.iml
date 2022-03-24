@@ -14,7 +14,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="Grupo-13" value="860305ab-1aef-4c13-a7bf-0eba5b3e5339" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
