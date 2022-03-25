@@ -1,16 +1,21 @@
 package com.caronabc.carona.util;
 
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Collections;
 
-@Builder
+@Getter
+@Setter
+@EqualsAndHashCode
 @NoArgsConstructor
-@AllArgsConstructor
-@Data
 @Entity
 @Table(name = "CARONA_CREDENTIALS")
-public class CredentialsUtil {
+public class CredentialsUtil implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "credentialsGenerator")
@@ -21,17 +26,14 @@ public class CredentialsUtil {
     @Column(name = "RA")
     private long ra;
 
-    @Column(name = "USERNAME")
-    private String username;
+    @Column(name = "NAME")
+    private String name;
 
     @Column(name = "EMAIL")
     private String email;
 
     @Column(name = "PASSWORD")
     private String password;
-
-    @Column(name = "NAME")
-    private String name;
 
     @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
@@ -42,4 +44,51 @@ public class CredentialsUtil {
 
     @Column(name = "ACCOUNT_ENABLED")
     private Boolean accountEnabled;
+
+    public CredentialsUtil(long ra, String name, String email, String password, RoleUtil role) {
+        this.ra = ra;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.name());
+
+        return Collections.singletonList(authority);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() { return true; }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return !accountLocked;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return accountEnabled;
+    }
 }

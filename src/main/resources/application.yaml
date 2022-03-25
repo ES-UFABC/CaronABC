@@ -4,14 +4,15 @@ spring:
   datasource:
     url: jdbc:h2:mem:carona-db
     driverClassName: org.h2.Driver
+    username: sa
+    password:
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-        format_sql: true
-      show_sql: true
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: "/h2"
 
 server:
   error:
