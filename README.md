@@ -22,8 +22,8 @@ Com as ondas de assaltos aumentando em Santo André, e alunos tendo que andar at
 
 <h2>Principais tecnologias</h2>
 
-Back-End: SpringBoot
-DataBase: MySQL
+Back-End: SpringBoot ;
+DataBase: MySQL ;
 Front-End: AndroidStudio
 
 <h2>Como baixar</h2>
