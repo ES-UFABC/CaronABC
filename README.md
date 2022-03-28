@@ -20,6 +20,11 @@ Com as ondas de assaltos aumentando em Santo André, e alunos tendo que andar at
 
 * https://docs.google.com/document/d/1BIX5BvSlgJN9AZu3mExJHMdhMfb_lnKmtDAi8wCTLLA/edit
 
+<h2>Principais tecnologias</h2>
+
+Back-End: SpringBoot
+DataBase: MySQL
+Front-End: AndroidStudio
 
 <h2>Como baixar</h2>
 
