@@ -2,17 +2,16 @@ spring:
   application:
     name: CaronaABC
   datasource:
-    url: jdbc:h2:mem:carona-db
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/carona_credentials
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1707
   jpa:
     hibernate:
-      ddl-auto: create
-  h2:
-    console:
-      enabled: true
-      path: "/h2"
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
 
 server:
   error:
