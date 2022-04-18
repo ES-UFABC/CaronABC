@@ -1,0 +1,66 @@
+
+
+.cabecalho_login {
+    text-align: center;
+    background-color: #02672e;
+    padding: 8px 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+}
+form {
+    margin: 10% 20%;
+    display: grid;
+    justify-content: center;
+    background-color: #01310a;
+    border-radius: 5%;
+    
+}
+
+#senha, #email {
+    border-radius: 10%;
+    padding: 0.5% 5%;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+img {
+    width: 60%;
+    border-radius: 25%;
+    margin-bottom: 25%;
+}
+
+form label {
+    font-size: 150%;
+    margin: 0 15% 0;
+
+}
+
+form input {
+    margin: 0 15% 5%;
+    padding: 0 10%;
+}
+
+.botao_cadastrar {
+    width: 80%;
+}
+
+.botao_esqueci_a_senha {
+    width: 45%;
+}
+
+.botao_logar {
+    width: 45%;
+}
+
+.rodape  {
+    padding: 3%;
+    bottom: 0;
+    width: 98%;
+    height: 15%;
+    text-align: center;
+    align-items: baseline;
+    background-color: #002e08;
+}
