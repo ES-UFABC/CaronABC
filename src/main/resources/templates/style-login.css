@@ -28,7 +28,7 @@ div {
 
 img {
     width: 60%;
-    border-radius: 25%;
+    border-radius: 15%;
     margin-bottom: 25%;
 }
 
@@ -48,11 +48,11 @@ form input {
 }
 
 .botao_esqueci_a_senha {
-    width: 45%;
+    width: 65%;
 }
 
 .botao_logar {
-    width: 45%;
+    width: 65%;
 }
 
 .rodape  {
