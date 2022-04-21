@@ -11,13 +11,17 @@ form {
     display: grid;
     justify-content: center;
     background-color: #01310a;
+    padding: 1.4em 0em;
     border-radius: 5%;
-    
 }
 
 #senha, #email {
-    border-radius: 10%;
-    padding: 0.5% 5%;
+    border-radius: 2em;
+    text-align: center;
+    font-weight: bold;
+    justify-self: center;
+    width: 12em;
+    padding: 0.4em 1em;
 }
 
 div {
@@ -28,14 +32,17 @@ div {
 
 img {
     width: 60%;
-    border-radius: 15%;
-    margin-bottom: 25%;
+    border-radius: 1em;
+    margin-bottom: 3em;
 }
 
+
 form label {
+    text-align: center;
+    text-transform: capitalize;
     font-size: 150%;
     margin: 0 15% 0;
-
+    font-weight: bold;
 }
 
 form input {
@@ -44,7 +51,20 @@ form input {
 }
 
 .botao_cadastrar {
-    width: 80%;
+    border: 3px solid white;
+    width: 12em;
+    text-transform: capitalize;
+    color: white;
+    border-radius: 2em;
+    font-weight: bold;
+    background-color: transparent;
+    justify-self: center;
+    padding: 0.4em 1em;
+}
+
+.botao_cadastrar:hover {
+    background-color: white;
+    color: #01310a;
 }
 
 .botao_esqueci_a_senha {
@@ -52,7 +72,22 @@ form input {
 }
 
 .botao_logar {
-    width: 65%;
+    margin-top: 1em;
+    justify-self: center;
+    text-align: center;
+    width: 12em;
+    font-weight: bold;
+    border-radius: 2em;
+    padding: 0.4em 1em;
+    color: white;
+    text-transform: capitalize;
+    background-color: transparent;
+    border: solid 3px white;
+}
+
+.botao_logar:hover {
+    background-color: white;
+    color: #01310a;
 }
 
 .rodape  {

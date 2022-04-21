@@ -63,6 +63,7 @@ button {
     font-family: 'Arial', 'sans-serif';
     color: #FFFFFF;
     padding: 1px 1px;
+    text-transform: capitalize;
     border-width: 10px;
     border-style: none;
     font-weight: bold;
@@ -81,9 +82,9 @@ button {
     height: 25vw;
     object-fit: cover;
 }
-.quadro li{
+.quadro li {
     background-color: #02672e;
-    border-radius: 10%;
+    border-radius: 1em;
     display: inline-block;
     text-align: center;
     flex-wrap: wrap;
@@ -91,7 +92,6 @@ button {
     vertical-align: top;
     margin: 0 4.5%;
     padding: 0 3%;
-    
 }
 
 .quadro {
