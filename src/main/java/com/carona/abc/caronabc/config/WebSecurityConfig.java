@@ -20,9 +20,6 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private DataSource dataSource;
-
     @Bean
     public UserDetailsService userDetailsService() {
         return new CustomUserDetailService();
@@ -58,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .permitAll()
+                .defaultSuccessUrl("/home")
                 .and()
                 .logout()
                 .invalidateHttpSession(true)
