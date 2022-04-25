@@ -24,12 +24,12 @@ Pensando no contexto de segurança e mobilidade nos arredores dos campus da UFAB
 
 <h2>Principais tecnologias</h2>
 
-Intellij IDEA Ultimate
-Java 11
-Maven
-Spring Boot 
-HTML/CSS
-JQuery
+Intellij IDEA Ultimate\
+Java 11\
+Maven\
+Spring Boot\
+HTML/CSS\
+JQuery\
 MySQL/MySQL Workbench
 
 Além disso, algumas da técnicas empregadas no desenvolvimento do projeto foram: testes unitários, singleton, pair-programming, refatoração, controle de versão etc.
