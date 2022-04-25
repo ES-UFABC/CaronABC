@@ -23,26 +23,35 @@ Pensando no contexto de segurança e mobilidade nos arredores dos campus da UFAB
 <h2>Principais tecnologias</h2>
 
 Intellij IDEA Ultimate
-![graph](https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/intellij-idea_logo_300x300.png)
+
 Java 11
+
 Maven
+
 Spring Boot 
+
 HTML/CSS
+
 JQuery
+
 MySQL/MySQL Workbench
+
 Além disso, algumas da técnicas empregadas no desenvolvimento do projeto foram: testes unitários, singleton, pair-programming, refatoração, controle de versão etc.
 
 <h2>Como baixar</h2>
 
 O software será acessado por meio de URL em navegadores padrões.
 
+
 <h2>Como instalar</h2>
 
 Não haverá necessidade de instalação.
 
+
 <h2>Como utilizar</h2>
 
 O software estará disponível para membros da comunidade acadêmica da UFABC (discentes/docentes/técnicos administrativos). 
+
 O usuário deverá acessar a URL, fazer o cadastro utilizando seu e-mail institucional (@aluno.ufabc.edu.br ou @ufabc.edu.br), preenchendo seu nome e demais informações necessárias para utilizar a aplicação. 
 Uma vez cadastrado, o usuário irá realizar o login utilizando seu e-mail institucional e senha. Após o login, deverá selecionar se deseja solicitar ou dar uma carona e quais serão seus destinos inicial e final. 
 Uma vez todas as informações preenchidas, o aplicativo será responsável por cruzar as informações dos usuários para que seja possível realizarem o encontro e cumprirem com o propósito do software.
