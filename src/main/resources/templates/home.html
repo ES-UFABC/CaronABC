@@ -1,46 +1,68 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="ISO-8859-1">
-    <title>CaronABC - Home</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="container text-center">
-    <div>
-        <h1>HOME</h1>
-    </div>
-    <form th:action="@{/map}" th:object="${}"
-          method="post" style="max-width: 600px; margin: 0 auto;">
-        <div class="m-3">
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Início: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{initialAddress}" class="form-control"/>
-                </div>
-            </div>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>"home CaronABC</title>
+        <link rel="stylesheet" href="../static/css/home.css">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="ISO-8859-1">
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        
+    </head>
 
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Destino: </label>
-                <div class="col-8">
-                    <input type="text" th:field="*{finalAddress}" class="form-control" maxlength="1000"/>
-                </div>
-            </div>
+    <body>
+        <header class="cabecalho">
+            <button class="cabecalho__menu">Menu</button>
+            <h1 class="cabecalho__titulo" id="titulo_pagina">CaronABC</h1>
+            <h1> </h1>
 
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Nome: </label>
-                <div class="col-8">
-                    <input type="button" th:field="*{rider}" class="form-control"/>
-                </div>
-            </div>
+        </header>
 
-            <div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
-            </div>
-        </div>
-    </form>
-</div>
-</body>
+
+        <nav class="menu_lateral">
+            <ul>
+                <li><a href="buscarCarona.html" class="menu_link">Pedir caroa</a></li>
+                <li><a href="darCarona.html" class="menu_link">Dar carona</a></li>
+                <li><a href="login.html" class="menu_link">Log out</a></li>
+            </ul>
+        </nav>
+
+        <script src="../static/js/index.js"></script>
+        
+       <main>
+            <ul class="quadro">
+
+            <li>
+                
+                <a href="buscarCarona.html">
+                    <button >
+                    <p><h3>Pedir carona</h3></p>
+                    <img class="imagem_botao" src="../static/images/pedir%20carona1.png">
+                </button>
+            </a> 
+            </li>
+
+            <li>
+                
+                <a href="darCarona.html">
+
+                    <button>
+                        <p><h3>dar carona</h3></p>
+                        <img src="../static/images/logo%20dar%20carona.png" class="imagem_botao">
+                    </button>
+                </a>
+            </li>
+
+        </ul>
+        </main>
+
+        <footer class="roda_pe">
+            <p class="titulo_rodape">CaronABC</p>
+            <p>Projeto engenharia de software: CaronABC - 2022 </p>
+        </footer>
+        
+    </body>
 </html>

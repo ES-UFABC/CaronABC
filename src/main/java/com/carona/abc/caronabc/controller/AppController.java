@@ -1,44 +1,34 @@
 package com.carona.abc.caronabc.controller;
 
-import com.carona.abc.caronabc.user.User;
-import com.carona.abc.caronabc.user.UserRepository;
-import lombok.Builder;
+import com.carona.abc.caronabc.user.UserDAO;
+import com.carona.abc.caronabc.user.UserService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.DefaultValue;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/")
 @Slf4j
 public class AppController {
 
-    private UserRepository userRepository;
+    private final UserService userService;
 
-    @GetMapping("/register")
-    public ModelAndView showRegistrationForm(Model model) {
-        User user = new User();
-        model.addAttribute("user", user);
-
-        log.info("User: {}", user);
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("signup_form");
-        return modelAndView;
+    @RequestMapping
+    public ModelAndView getUsers(ModelMap modelMap) {
+        List<UserDAO> userList = userService.getUsers();
+        modelMap.addAttribute("users", userList);
+        modelMap.addAttribute("userDAO", new UserDAO());
+        return new ModelAndView("index");
     }
 
-    @GetMapping("/home")
-    public ModelAndView setTravelInformation(String initialAddress,
-                                             String finalAddress) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("home");
-        return modelAndView;
+    @PostMapping
+    public ModelAndView createUser(ModelMap modelMap, @ModelAttribute UserDAO userDAO) {
+        UserDAO user = userService.createUser(userDAO);
+        return new ModelAndView("index");
     }
 }
