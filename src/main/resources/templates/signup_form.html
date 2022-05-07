@@ -10,7 +10,7 @@
 <body>
 <div class="container text-center">
     <div>
-        <h1>TELA DE REGISTRO - WIP</h1>
+        <h1>TELA DE REGISTRO</h1>
     </div>
     <form th:action="@{/process_register}" th:object="${user}"
           method="post" style="max-width: 600px; margin: 0 auto;">
@@ -18,7 +18,9 @@
             <div class="form-group row">
                 <label class="col-4 col-form-label">E-mail: </label>
                 <div class="col-8">
-                    <input type="email" th:field="*{email}" class="form-control" required />
+
+                    <input type="email" placeholder="Email inst. UFABC" th:field="*{email}"
+                           pattern="[^\t\n\f\r]+@(aluno\.)?ufabc\.edu\.br" class="form-control"/>
                 </div>
             </div>
 
