@@ -12,7 +12,7 @@
 <body class="container">
 
 <header class="cabecalho">
-    <button class="cabecalho__menu">Menu</button>
+   <!-- <button class="cabecalho__menu">Menu</button>-->
     <h1 class="cabecalho__titulo" id="titulo_pagina">CaronABC</h1>
     <h1> </h1>
 
@@ -20,13 +20,12 @@
 
 <nav class="menu_lateral">
     <ul>
-        <li><a href="buscarCarona.html" class="menu_link">Pedir caroa</a></li>
-        <li><a href="darCarona.html" class="menu_link">Dar carona</a></li>
-        <li><a href="login.html" class="menu_link">Log out</a></li>
+        <li th:action="@{/registro}"><input class="btn_btn-primary" type="submit" value="home">
+
     </ul>
 </nav>
 
-
+<div class="container_1">
 <form class="col card p-3 mb-5" method="post" th:action="@{/registro}" th:object="${userDAO}">
 
     <div class="logo">
@@ -60,18 +59,20 @@
 
     <input class="btn_btn-primary" type="submit" value="Submeter">
 </form>
+</div>
 
 <table class="table_table-striped_table-bordered">
     <thead>
-    <tr>
-        <th>Nome completo</th>
-        <th>Partida</th>
-        <th>Destino</th>
-        <th>Email</th>
-        <th>Número de telefone</th>
-    </tr>
+    <th th:each="user : ${userDAO}">
+        <tr><td>Nome completo</td> <th th:text="${userDAO.fullName}" ></th> </tr>
+        <tr><td>Partida</td> <th th:text="${userDAO.initialAddress}"></th></tr>
+        <tr><td>Destino</td> <th th:text="${userDAO.finalAddress}"></th></tr>
+        <tr><td>Email</td> <th th:text="${userDAO.email}"></th></tr>
+        <tr><td>Número de telefone</td>  <th th:text="${userDAO.phoneNumber}"></th></tr>
+    </th>
     </thead>
 
+<!--
     <tr th:each="user : ${userDAO}">
         <td th:text="${userDAO.fullName}"></td>
         <td th:text="${userDAO.initialAddress}"></td>
@@ -79,9 +80,10 @@
         <td th:text="${userDAO.email}"></td>
         <td th:text="${userDAO.phoneNumber}"></td>
     </tr>
+    -->
+
 </table>
 </body>
-
 
 
 <style>
@@ -95,9 +97,12 @@
 
     .cabecalho {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         background-color: #02672e;
+        color: #fdd100;
+        font-size: 150%;
+        font-weight: bold;
         padding: 8px 16px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
     }
@@ -117,16 +122,13 @@
         left: 0;
         transition: .25s;
     }
+
     .logo {
         display: flex;
         justify-content: center;
         margin-top: 10%;
     }
 
-    div {
-        display: flex;
-        justify-content: center;
-    }
 
     img {
         width: 60%;
@@ -147,12 +149,12 @@
         text-align: left;
         text-transform: capitalize;
         font-size: 150%;
-        margin: 0 15% 0;
+        margin: 0 12% 0;
         font-weight: bold;
     }
 
     input {
-        margin: 0 15% 5%;
+        margin: 0 12% 5%;
         padding: 0 10%;
         text-align: center;
     }
@@ -175,28 +177,34 @@
     }
 
     table {
-
         display: grid;
         justify-content: center;
-        margin: 0 20px 20px;
-        text-align: left;
-    }
-    thead, th {
-        font-weight: bold;
-        color: #FFFFFF;
-        padding: 0 20px;
-        text-align: left;
-    }
-    tr {
-        text-align: left;
-        font-family: 'Arial', 'icones', 'sans-serif';
-        color: #FFFFFF;
 
     }
-    td {
+
+    th {
+        font-size: 120%;
+        font-weight: normal;
+        color: #FFFFFF;
         text-align: left;
-        padding: 0 35px;
+        padding-left: 1em;
     }
+    tr {
+        text-align: center;
+        font-family: 'Arial', 'icones', 'sans-serif';
+        color: #FFFFFF;
+    }
+    td {
+        font-weight: bold;
+        font-size: 130%;
+        text-align: left;
+    }
+    .container_1 {
+        display: flex;
+        justify-content: center;
+    }
+
+
 </style>
 
 <script>
