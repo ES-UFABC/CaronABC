@@ -20,8 +20,6 @@ Pensando no contexto de segurança e mobilidade nos arredores dos campus da UFAB
 1. Guilherme Gonçalves Braz
 1. Fernanda Aparecida Barbosa de Araujo
 
-* https://docs.google.com/document/d/1BIX5BvSlgJN9AZu3mExJHMdhMfb_lnKmtDAi8wCTLLA/edit
-
 <h2>Principais tecnologias</h2>
 
 Intellij IDEA Ultimate\
