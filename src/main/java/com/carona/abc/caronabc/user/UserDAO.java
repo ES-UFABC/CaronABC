@@ -1,7 +1,6 @@
 package com.carona.abc.caronabc.user;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +9,7 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class UserDAO {
 
     @Id

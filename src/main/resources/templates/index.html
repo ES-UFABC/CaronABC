@@ -6,51 +6,63 @@
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
             name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Thymeleaf Form handling Demo</title>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
-          rel="stylesheet">
+    <title>CaronABC Home</title>
+
 </head>
 <body class="container">
-<h1 class="py-5">Informações</h1>
-<form class="col card p-3 mb-5" method="post" th:action="@{/index/}" th:object="${userDAO}">
-    <div class="form-group">
-        <label for="fullName">Nome completo</label>
-        <input class="form-control" id="fullName" placeholder="Nome completo" required
-               th:field="*{fullName}"
-               type="text"/>
+
+<header class="cabecalho">
+    <button class="cabecalho__menu">Menu</button>
+    <h1 class="cabecalho__titulo" id="titulo_pagina">CaronABC</h1>
+    <h1> </h1>
+
+</header>
+
+<nav class="menu_lateral">
+    <ul>
+        <li><a href="buscarCarona.html" class="menu_link">Pedir caroa</a></li>
+        <li><a href="darCarona.html" class="menu_link">Dar carona</a></li>
+        <li><a href="login.html" class="menu_link">Log out</a></li>
+    </ul>
+</nav>
+
+
+<form class="col card p-3 mb-5" method="post" th:action="@{/registro}" th:object="${userDAO}">
+
+    <div class="logo">
+        <img src="https://i.ibb.co/yqQKr30/logo-app.png">
     </div>
 
-    <div class="form-group">
-        <label for="initialAddress">Partida</label>
-        <input class="form-control" id="initialAddress" placeholder="Partida" required
-               th:field="*{initialAddress}"
-               type="text"/>
-    </div>
+    <label for="fullName">Nome completo</label>
+    <input class="form-control" id="fullName" placeholder="Nome completo" required
+           th:field="*{fullName}"
+           type="text"/>
 
-    <div class="form-group">
-        <label for="finalAddress">Destino</label>
-        <input class="form-control" id="finalAddress" placeholder="Destino" required
-               th:field="*{finalAddress}"
-               type="text"/>
-    </div>
+    <label for="initialAddress">Partida</label>
+    <input class="form-control" id="initialAddress" placeholder="Partida" required
+           th:field="*{initialAddress}"
+           type="text"/>
 
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control" id="email" placeholder="@aluno.ufabc.edu.br | @ufabc.edu.br" required
-               th:field="*{email}"
-               type="text"/>
-    </div>
+    <label for="finalAddress">Destino</label>
+    <input class="form-control" id="finalAddress" placeholder="Destino" required
+           th:field="*{finalAddress}"
+           type="text"/>
 
-    <div class="form-group">
-        <label for="phoneNumber">Número de telefone</label>
-        <input class="form-control" id="phoneNumber" placeholder="(DDD)XXXXX-XXXX" required
-               th:field="*{phoneNumber}"
-               type="text"/>
-    </div>
+    <label for="email">Email</label>
+    <input class="form-control" id="email" placeholder="@aluno.ufabc.edu.br | @ufabc.edu.br" required
+           th:field="*{email}"
+           type="text"/>
+    <label for="phoneNumber">Número de telefone</label>
+    <input class="form-control" id="phoneNumber" placeholder="(DDD)XXXXX-XXXX"
+           required
+           th:field="*{phoneNumber}"
+           type="text"/>
 
-    <input class="btn btn-primary" type="submit" value="Submeter">
+    <input class="btn_btn-primary" type="submit" value="Submeter">
 </form>
-<table class="table table-striped table-bordered">
+
+<table class="table_table-striped_table-bordered">
+    <thead>
     <tr>
         <th>Nome completo</th>
         <th>Partida</th>
@@ -58,16 +70,143 @@
         <th>Email</th>
         <th>Número de telefone</th>
     </tr>
-    <tr th:if="${#lists.isEmpty(index)}">
-        <td colspan="5">Sem dados por hora</td>
-    </tr>
-    <tr th:each="user : ${userDTO}">
-        <td th:text="${userDTO.fullName}"></td>
-        <td th:text="${userDTO.initialAddress}"></td>
-        <td th:text="${userDTO.finalAddress}"></td>
-        <td th:text="${userDTO.email}"></td>
-        <td th:text="${userDTO.phoneNumber}"></td>
+    </thead>
+
+    <tr th:each="user : ${userDAO}">
+        <td th:text="${userDAO.fullName}"></td>
+        <td th:text="${userDAO.initialAddress}"></td>
+        <td th:text="${userDAO.finalAddress}"></td>
+        <td th:text="${userDAO.email}"></td>
+        <td th:text="${userDAO.phoneNumber}"></td>
     </tr>
 </table>
 </body>
+
+
+
+<style>
+    body {
+        background-color: #003b0b;
+        font-family: 'Arial', 'icones', 'sans-serif';
+        color: #FFFFFF;
+        margin: 1px;
+        font-size: 11px;
+    }
+
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #02672e;
+        padding: 8px 16px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    }
+
+    .menu_lateral {
+        display: flex;
+        flex-direction: column;
+        background-color: #02672e;
+        width: 30vw;
+        height: 100vh;
+        position: absolute;
+        left: -100vw;
+        transition: .25s;
+    }
+
+    .menu-lateral--ativo {
+        left: 0;
+        transition: .25s;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        width: 60%;
+        border-radius: 1em;
+        margin-bottom: 3em;
+    }
+
+    form {
+        display: grid;
+        justify-content: center;
+        background-color: #01310a;
+        padding: 1em 0em;
+        margin: 2.5% 2.5%;
+        border-radius: 5%;
+    }
+
+    label {
+        text-align: left;
+        text-transform: capitalize;
+        font-size: 150%;
+        margin: 0 15% 0;
+        font-weight: bold;
+    }
+
+    input {
+        margin: 0 15% 5%;
+        padding: 0 10%;
+        text-align: center;
+    }
+
+    .btn_btn-primary {
+        border: 3px solid white;
+        width: 12em;
+        text-transform: capitalize;
+        color: white;
+        border-radius: 2em;
+        font-weight: bold;
+        background-color: transparent;
+        justify-self: center;
+        padding: 0.4em 1em;
+    }
+
+    .btn_btn-primary:hover {
+        background-color: white;
+        color: #01310a;
+    }
+
+    table {
+
+        display: grid;
+        justify-content: center;
+        margin: 0 20px 20px;
+        text-align: left;
+    }
+    thead, th {
+        font-weight: bold;
+        color: #FFFFFF;
+        padding: 0 20px;
+        text-align: left;
+    }
+    tr {
+        text-align: left;
+        font-family: 'Arial', 'icones', 'sans-serif';
+        color: #FFFFFF;
+
+    }
+    td {
+        text-align: left;
+        padding: 0 35px;
+    }
+</style>
+
+<script>
+    const botaoMenu = document.querySelector('.cabecalho__menu');
+    const menu = document.querySelector('.menu_lateral');
+
+
+    botaoMenu.addEventListener('click', () => {
+        menu.classList.toggle('menu-lateral--ativo')
+    })
+</script>
+
 </html>
