@@ -9,7 +9,6 @@
     <title>CaronABC Home</title>
 
 </head>
-
 <body class="container">
 
 <header class="cabecalho">
@@ -28,7 +27,7 @@
 </nav>
 
 
-<form class="col card p-3 mb-5" method="post" th:action="@{/index/}" th:object="${userDAO}">
+<form class="col card p-3 mb-5" method="post" th:action="@{/registro}" th:object="${userDAO}">
 
     <div class="logo">
         <img src="https://i.ibb.co/yqQKr30/logo-app.png">
@@ -73,15 +72,12 @@
     </tr>
     </thead>
 
-    <tr th:if="${#lists.isEmpty(index)}">
-        <td colspan="5">Sem dados por hora</td>
-    </tr>
-    <tr th:each="user : ${userDTO}">
-        <td th:text="${userDTO.fullName}"></td>
-        <td th:text="${userDTO.initialAddress}"></td>
-        <td th:text="${userDTO.finalAddress}"></td>
-        <td th:text="${userDTO.email}"></td>
-        <td th:text="${userDTO.phoneNumber}"></td>
+    <tr th:each="user : ${userDAO}">
+        <td th:text="${userDAO.fullName}"></td>
+        <td th:text="${userDAO.initialAddress}"></td>
+        <td th:text="${userDAO.finalAddress}"></td>
+        <td th:text="${userDAO.email}"></td>
+        <td th:text="${userDAO.phoneNumber}"></td>
     </tr>
 </table>
 </body>
