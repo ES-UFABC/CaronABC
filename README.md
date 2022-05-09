@@ -34,15 +34,9 @@ MySQL/MySQL Workbench
 
 Além disso, algumas da técnicas empregadas no desenvolvimento do projeto foram: testes unitários, singleton, pair-programming, refatoração, controle de versão etc.
 
-<h2>Como baixar</h2>
+<h2>Como acessar</h2>
 
 O software será acessado por meio de URL em navegadores padrões.
-
-
-<h2>Como instalar</h2>
-
-Não haverá necessidade de instalação.
-
 
 <h2>Como utilizar</h2>
 
