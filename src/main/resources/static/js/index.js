@@ -1,7 +1,11 @@
-const botaoMenu = document.querySelector('.cabecalho__menu');
-const menu = document.querySelector('.menu_lateral');
+function emailEhValido(email) {
+    const re = /^[^ \t\n\f\r]+@(aluno\.)?ufabc\.edu\.br$/;
 
+    var ehValido = re.test(email);
+    return ehValido;
+}
 
-botaoMenu.addEventListener('click', () => {
-    menu.classList.toggle('menu-lateral--ativo')
-})
+var email = "g.braz@ufabc.edu.br";
+var verifica = emailEhValido(email);
+
+console.log(verifica);
