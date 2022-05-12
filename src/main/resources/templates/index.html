@@ -43,11 +43,15 @@
            th:field="*{fullName}"
            type="text"/>
 
-   <label for="rideModality">Objetivo</label>
-    <select class="opcao_ride" th:field="*{rideModality}" id="rideModality" required>
-        <option class="opcao_ride" value="">Selecione uma opção</option>
-        <option class="opcao_ride" value="Pegar carona">Pegar Carona</option>
-        <option class="opcao_ride" value="Dar carona">Dar Carona</option>
+<label for="ride">Objetivo</label>
+    <select class="opcao_ride" id="ride" required
+            th:field="*{ride}">
+        <option hidden class="opcao_ride" value="">Selecione uma opção</option>
+        <option
+                th:each="ride : ${T(com.carona.abc.caronabc.user.Ride).values()}"
+                th:text= "${ride}"
+                th:value="${ride}">
+        </option>
     </select>
 
     <label for="initialAddress">Local de partida</label>
@@ -60,12 +64,12 @@
            th:field="*{finalAddress}"
            type="text"/>
 
-    <label for="departure">Hora de partida</label>
-     <input class="form-control" id="departure" placeholder="Insira o horario de partida"
+    <label for="departureTime">Hora de partida</label>
+     <input class="form-control" id="departureTime" placeholder="Insira o horario de partida"
             required
-            th:field="*{departure}"
-            type="time"
-             title="Insira um horario para partida"/>
+            th:field="*{departureTime}"
+            type="datetime-local"
+            title="Insira um horario para partida"/>
 
      <label for="email">Email</label>
      <input class="form-control" id="email" placeholder="@aluno.ufabc.edu.br | @ufabc.edu.br" required
@@ -79,10 +83,7 @@
             required
             th:field="*{phoneNumber}"
             type="text"
-             pattern="\d{11}" title="Insira o numero de telefone e DDD sem '-' ou espaços vazio"/>
-
-
-
+            pattern="\d{11}" title="Insira o numero de telefone e DDD sem '-' ou espaços vazio"/>
 
      <input class="btn_btn-primary" type="submit" value="Submeter">
  </form>
@@ -92,10 +93,10 @@
      <thead>
      <th th:each="user : ${userDAO}">
          <tr><td>Nome completo</td> <th th:text="${userDAO.fullName}" ></th> </tr>
-         <tr><td>Objetivo</td> <th th:text="${userDAO.rideModality}" ></th> </tr>-->
+         <tr><td>Objetivo</td> <th th:text="${userDAO.ride}" ></th> </tr>-->
          <tr><td>Local de partida</td> <th th:text="${userDAO.initialAddress}"></th></tr>
          <tr><td>Destino</td> <th th:text="${userDAO.finalAddress}"></th></tr>
-         <tr><td>Hora de partida</td> <th th:text="${userDAO.depature}"></th></tr>
+         <tr><td>Hora de partida</td> <th th:text="${userDAO.departureTime}"></th></tr>
          <tr><td>Email</td> <th th:text="${userDAO.email}"></th></tr>
          <tr><td>Número de telefone</td>  <th th:text="${userDAO.phoneNumber}"></th></tr>
          <tr><td>Trajeto</td>  <th><a href="/api/map/adress"> <input id="botao_rota" type="button", onclick="rota()" value="Rota"></th></tr></a>
