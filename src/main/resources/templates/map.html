@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""></script>
+    <style>
+        #map {position: absolute; top: 150px; bottom: 20px; left: 20px;right: 20px}
+    </style>
+</head>
+
+<header class="cabecalho">
+    <!--<button class="cabecalho__menu">Menu</button>-->
+    <h1 class="cabecalho__titulo" id="titulo_pagina">CaronABC</h1>
+    <h1> </h1>
+
+</header>
+
+<nav class="menu_lateral">
+    <ul>
+        <li th:action="@{/registro}"><input class="btn_btn-primary" type="submit" value="home">
+
+    </ul>
+</nav>
+<body>
+
+<div id='map'></div>
+<script th:inline="javascript">
+    var map = L.map('map').setView([-23.549543, -46.633942], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=n2l1ja5htG40J8f9gKyB', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a>' +
+            '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        maxZoom: 18,
+        tileSize: 512,
+        zoomOffset: -1,
+    }).addTo(map);
+    var geoJson = /*[[${geoJsonDirections}]]*/ '';
+    L.geoJSON(JSON.parse(geoJson)).addTo(map);
+</script>
+
+</body>
+
+<style>
+
+    .cabecalho {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #02672e;
+        color: #fdd100;
+        font-size: 150%;
+        font-weight: bold;
+        padding: 8px 16px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    }
+    body {
+        background-color: #003b0b;
+        font-family: 'Arial', 'icones', 'sans-serif';
+        color: #FFFFFF;
+        margin: 1px;
+        font-size: 11px;
+    }
+
+
+    .menu_lateral {
+        display: flex;
+        flex-direction: column;
+        background-color: #02672e;
+        width: 30vw;
+        height: 100vh;
+        position: absolute;
+        left: -100vw;
+        transition: .25s;
+    }
+
+    .menu-lateral--ativo {
+        left: 0;
+        transition: .25s;
+    }
+
+</style>
+
+<script>
+    const botaoMenu = document.querySelector('.cabecalho__menu');
+    const menu = document.querySelector('.menu_lateral');
+
+
+    botaoMenu.addEventListener('click', () => {
+        menu.classList.toggle('menu-lateral--ativo')
+    })
+</script>
+
+</html>
