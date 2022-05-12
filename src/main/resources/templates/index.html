@@ -6,13 +6,19 @@
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
             name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <link href="../static/css/Carona_home.css" th:href="@{/css/Carona_home.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/index.js}" href="../static/js/index.js"></script>
+    <script type="text/javascript" th:src="@{/js/menu_lateral.js}" href="../static/js/menu_lateral.js"></script>
+
     <title>CaronABC Home</title>
 
 </head>
+
 <body class="container">
 
 <header class="cabecalho">
-   <!-- <button class="cabecalho__menu">Menu</button>-->
+    <!--<button class="cabecalho__menu">Menu</button>-->
     <h1 class="cabecalho__titulo" id="titulo_pagina">CaronABC</h1>
     <h1> </h1>
 
@@ -20,7 +26,7 @@
 
 <nav class="menu_lateral">
     <ul>
-        <li th:action="@{/registro}"><input class="btn_btn-primary" type="submit" value="home">
+        <li><input class="btn_btn-primary" type="submit" value="home">
 
     </ul>
 </nav>
@@ -37,39 +43,66 @@
            th:field="*{fullName}"
            type="text"/>
 
-    <label for="initialAddress">Partida</label>
-    <input class="form-control" id="initialAddress" placeholder="Partida" required
+   <label for="rideModality">Objetivo</label>
+    <select class="opcao_ride" th:field="*{rideModality}" id="rideModality" required>
+        <option class="opcao_ride" value="">Selecione uma opção</option>
+        <option class="opcao_ride" value="Pegar carona">Pegar Carona</option>
+        <option class="opcao_ride" value="Dar carona">Dar Carona</option>
+    </select>
+
+    <label for="initialAddress">Local de partida</label>
+    <input class="form-control" id="initialAddress" placeholder="Endereço inicial" required
            th:field="*{initialAddress}"
            type="text"/>
 
     <label for="finalAddress">Destino</label>
-    <input class="form-control" id="finalAddress" placeholder="Destino" required
+    <input class="form-control" id="finalAddress" placeholder="Endereço destino" required
            th:field="*{finalAddress}"
            type="text"/>
 
-    <label for="email">Email</label>
-    <input class="form-control" id="email" placeholder="@aluno.ufabc.edu.br | @ufabc.edu.br" required
-           th:field="*{email}"
-           type="text"/>
-    <label for="phoneNumber">Número de telefone</label>
-    <input class="form-control" id="phoneNumber" placeholder="(DDD)XXXXX-XXXX"
-           required
-           th:field="*{phoneNumber}"
-           type="text"/>
+    <label for="departure">Hora de partida</label>
+     <input class="form-control" id="departure" placeholder="Insira o horario de partida"
+            required
+            th:field="*{departure}"
+            type="time"
+             title="Insira um horario para partida"/>
 
-    <input class="btn_btn-primary" type="submit" value="Submeter">
-</form>
-</div>
+     <label for="email">Email</label>
+     <input class="form-control" id="email" placeholder="@aluno.ufabc.edu.br | @ufabc.edu.br" required
+            th:field="*{email}"
+            type="email"
+            pattern="^[^ \t\n\f\r]+@(aluno\.)?ufabc\.edu\.br$"
+     title="Insira um e-mail institucional da UFABC"/>
 
-<table class="table_table-striped_table-bordered">
-    <thead>
-    <th th:each="user : ${userDAO}">
-        <tr><td>Nome completo</td> <th th:text="${userDAO.fullName}" ></th> </tr>
-        <tr><td>Partida</td> <th th:text="${userDAO.initialAddress}"></th></tr>
-        <tr><td>Destino</td> <th th:text="${userDAO.finalAddress}"></th></tr>
-        <tr><td>Email</td> <th th:text="${userDAO.email}"></th></tr>
-        <tr><td>Número de telefone</td>  <th th:text="${userDAO.phoneNumber}"></th></tr>
-    </th>
+     <label for="phoneNumber">Número de telefone</label>
+     <input class="form-control" id="phoneNumber" placeholder="(DDD)XXXXX-XXXX"
+            required
+            th:field="*{phoneNumber}"
+            type="text"
+             pattern="\d{11}" title="Insira o numero de telefone e DDD sem '-' ou espaços vazio"/>
+
+
+
+
+     <input class="btn_btn-primary" type="submit" value="Submeter">
+ </form>
+ </div>
+
+ <table class="table_table-striped_table-bordered">
+     <thead>
+     <th th:each="user : ${userDAO}">
+         <tr><td>Nome completo</td> <th th:text="${userDAO.fullName}" ></th> </tr>
+         <tr><td>Objetivo</td> <th th:text="${userDAO.rideModality}" ></th> </tr>-->
+         <tr><td>Local de partida</td> <th th:text="${userDAO.initialAddress}"></th></tr>
+         <tr><td>Destino</td> <th th:text="${userDAO.finalAddress}"></th></tr>
+         <tr><td>Hora de partida</td> <th th:text="${userDAO.depature}"></th></tr>
+         <tr><td>Email</td> <th th:text="${userDAO.email}"></th></tr>
+         <tr><td>Número de telefone</td>  <th th:text="${userDAO.phoneNumber}"></th></tr>
+         <tr><td>Trajeto</td>  <th><a href="/api/map/adress"> <input id="botao_rota" type="button", onclick="rota()" value="Rota"></th></tr></a>
+     </th>
+
+     <!-- TODO: pegar os endereços por id, populando o id com o e-mail de cada usuario-->
+
     </thead>
 
 <!--
@@ -85,136 +118,5 @@
 </table>
 </body>
 
-
-<style>
-    body {
-        background-color: #003b0b;
-        font-family: 'Arial', 'icones', 'sans-serif';
-        color: #FFFFFF;
-        margin: 1px;
-        font-size: 11px;
-    }
-
-    .cabecalho {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #02672e;
-        color: #fdd100;
-        font-size: 150%;
-        font-weight: bold;
-        padding: 8px 16px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
-    }
-
-    .menu_lateral {
-        display: flex;
-        flex-direction: column;
-        background-color: #02672e;
-        width: 30vw;
-        height: 100vh;
-        position: absolute;
-        left: -100vw;
-        transition: .25s;
-    }
-
-    .menu-lateral--ativo {
-        left: 0;
-        transition: .25s;
-    }
-
-    .logo {
-        display: flex;
-        justify-content: center;
-        margin-top: 10%;
-    }
-
-
-    img {
-        width: 60%;
-        border-radius: 1em;
-        margin-bottom: 3em;
-    }
-
-    form {
-        display: grid;
-        justify-content: center;
-        background-color: #01310a;
-        padding: 1em 0em;
-        margin: 2.5% 2.5%;
-        border-radius: 5%;
-    }
-
-    label {
-        text-align: left;
-        text-transform: capitalize;
-        font-size: 150%;
-        margin: 0 12% 0;
-        font-weight: bold;
-    }
-
-    input {
-        margin: 0 12% 5%;
-        padding: 0 10%;
-        text-align: center;
-    }
-
-    .btn_btn-primary {
-        border: 3px solid white;
-        width: 12em;
-        text-transform: capitalize;
-        color: white;
-        border-radius: 2em;
-        font-weight: bold;
-        background-color: transparent;
-        justify-self: center;
-        padding: 0.4em 1em;
-    }
-
-    .btn_btn-primary:hover {
-        background-color: white;
-        color: #01310a;
-    }
-
-    table {
-        display: grid;
-        justify-content: center;
-
-    }
-
-    th {
-        font-size: 120%;
-        font-weight: normal;
-        color: #FFFFFF;
-        text-align: left;
-        padding-left: 1em;
-    }
-    tr {
-        text-align: center;
-        font-family: 'Arial', 'icones', 'sans-serif';
-        color: #FFFFFF;
-    }
-    td {
-        font-weight: bold;
-        font-size: 130%;
-        text-align: left;
-    }
-    .container_1 {
-        display: flex;
-        justify-content: center;
-    }
-
-
-</style>
-
-<script>
-    const botaoMenu = document.querySelector('.cabecalho__menu');
-    const menu = document.querySelector('.menu_lateral');
-
-
-    botaoMenu.addEventListener('click', () => {
-        menu.classList.toggle('menu-lateral--ativo')
-    })
-</script>
 
 </html>
