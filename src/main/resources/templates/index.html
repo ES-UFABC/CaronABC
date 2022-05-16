@@ -90,34 +90,21 @@
 </div>
 
 <table class="table_table-striped_table-bordered">
-    <thead>
-    <th th:each="user : ${userDAO}">
-        <tr><td>Nome completo</td> <th th:text="${userDAO.fullName}" ></th> </tr>
-        <tr><td>Objetivo</td> <th th:text="${userDAO.ride}" ></th> </tr>-->
-        <tr><td>Local de partida</td> <th th:text="${userDAO.initialAddress}"></th></tr>
-        <tr><td>Destino</td> <th th:text="${userDAO.finalAddress}"></th></tr>
-        <tr><td>Hora de partida</td> <th th:text="${userDAO.departureTime}"></th></tr>
-        <tr><td>Email</td> <th th:text="${userDAO.email}"></th></tr>
-        <tr><td>Número de telefone</td>  <th th:text="${userDAO.phoneNumber}"></th></tr>
 
-        <tr><td>Trajeto</td>  <th><a th:href="@{'/address/{init}/{final}'(init=${userDAO.initialAddress},final=${userDAO.finalAddress})}"> <input id="botao_rota" type="button" value="Rota"></a></th></tr>
+    <div th:each="user : ${userDAO}">
+        <tr><th>Nome completo</th> <td th:text="${userDAO.fullName}" ></td> </tr>
+        <tr><th>Objetivo</th> <td th:text="${userDAO.ride}" ></td> </tr>
+        <tr><th>Local de partida</th> <td th:text="${userDAO.initialAddress}"></td></tr>
+        <tr><th>Destino</th> <td th:text="${userDAO.finalAddress}"></td></tr>
+        <tr><th>Hora de partida</th> <td th:text="${userDAO.departureTime}"></td></tr>
+        <tr><th>Email</th> <td th:text="${userDAO.email}"></td></tr>
+        <tr><th>Número de telefone</th>  <td th:text="${userDAO.phoneNumber}"></td></tr>
+
+        <tr ><th>Trajeto</th>  <td><a th:href="@{'/address/{init}/{final}'(init=${userDAO.initialAddress},final=${userDAO.finalAddress})}"> <input id="botao_rota" type="button" value="Rota"></a></td></tr>
 
 
-    </th>
+    </div>
 
-    <!-- TODO: pegar os endereços por id, populando o id com o e-mail de cada usuario-->
-
-    </thead>
-
-    <!--
-        <tr th:each="user : ${userDAO}">
-            <td th:text="${userDAO.fullName}"></td>
-            <td th:text="${userDAO.initialAddress}"></td>
-            <td th:text="${userDAO.finalAddress}"></td>
-            <td th:text="${userDAO.email}"></td>
-            <td th:text="${userDAO.phoneNumber}"></td>
-        </tr>
-        -->
 
 </table>
 </body>
