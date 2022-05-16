@@ -9,12 +9,13 @@
             integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
             crossorigin=""></script>
     <style>
-        #map {position: absolute; top: 150px; bottom: 20px; left: 20px;right: 20px}
+        #map {position: absolute; top: 150px; bottom: 20px; left: 16em;right: 16em}
     </style>
 </head>
 
+
 <header class="cabecalho">
-    <!--<button class="cabecalho__menu">Menu</button>-->
+    <button class="cabecalho__menu">Menu</button>
     <h1 class="cabecalho__titulo" id="titulo_pagina">CaronABC</h1>
     <h1> </h1>
 
@@ -22,12 +23,11 @@
 
 <nav class="menu_lateral">
     <ul>
-        <li th:action="@{/registro}"><input class="btn_btn-primary" type="submit" value="home">
-
+        <li><a href="/registro"><input class="cabecalho__menu" type="button" value="Home"></a></a> </li>
     </ul>
 </nav>
 <body>
-<a href="/registro" class="botao_retorna">Retornar</a>
+
 <div id='map'></div>
 
 <script th:inline="javascript">
@@ -46,7 +46,7 @@
 </body>
 
 <style>
-    .botao_retorna {
+    .cabecalho__menu {
         background-color: transparent;
         border-radius: 28px;
         border: 2px solid #FFFFFF;
@@ -54,35 +54,21 @@
         cursor: pointer;
         color: #ffffff;
         font-family: Arial;
-        align-self: center;
-        text-align: center;
-        width: 20em;
+        width: 5em;
         font-size: 17px;
         align-content: center;
-        margin-top: 0.4em;
-        margin-left: 40%;
-        padding: 0.4em 1em;
+        margin-bottom: 2em;
         text-decoration: none;
     }
-    .botao_retorna:hover {
+    .cabecalho__menu:hover {
         background-color:transparent;
     }
-    .botao_retorna:active {
+    .cabecalho__menu:active {
         position:relative;
         top:1px;
     }
 
-    .cabecalho {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #02672e;
-        color: #fdd100;
-        font-size: 150%;
-        font-weight: bold;
-        padding: 8px 16px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
-    }
+
     body {
         background-color: #003b0b;
         font-family: 'Arial', 'icones', 'sans-serif';
@@ -91,13 +77,24 @@
         font-size: 11px;
     }
 
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #02672e;
+        color: #fdd100;
+        font-size: 150%;
+        font-weight: bold;
+        padding: 8px 16px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    }
 
     .menu_lateral {
         display: flex;
         flex-direction: column;
         background-color: #02672e;
-        width: 30vw;
-        height: 100vh;
+        width: 15em;
+        height: 100%;
         position: absolute;
         left: -100vw;
         transition: .25s;
@@ -106,7 +103,9 @@
     .menu-lateral--ativo {
         left: 0;
         transition: .25s;
+        position: absolute;
     }
+
 
 </style>
 
