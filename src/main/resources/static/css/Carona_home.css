@@ -106,7 +106,7 @@ table {
 
 }
 
-th {
+td {
     font-size: 120%;
     font-weight: normal;
     color: #FFFFFF;
@@ -118,10 +118,13 @@ tr {
     font-family: 'Arial', 'icones', 'sans-serif';
     color: #FFFFFF;
 }
-td {
+th {
     font-weight: bold;
     font-size: 130%;
     text-align: left;
+}
+.carona {
+    margin-bottom: 1em;
 }
 
 #botao_rota {
