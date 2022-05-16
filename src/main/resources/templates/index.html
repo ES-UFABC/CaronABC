@@ -91,16 +91,16 @@
 
 <table class="table_table-striped_table-bordered">
 
-    <div th:each="user : ${userDAO}">
-        <tr><th>Nome completo</th> <td th:text="${userDAO.fullName}" ></td> </tr>
-        <tr><th>Objetivo</th> <td th:text="${userDAO.ride}" ></td> </tr>
-        <tr><th>Local de partida</th> <td th:text="${userDAO.initialAddress}"></td></tr>
-        <tr><th>Destino</th> <td th:text="${userDAO.finalAddress}"></td></tr>
-        <tr><th>Hora de partida</th> <td th:text="${userDAO.departureTime}"></td></tr>
-        <tr><th>Email</th> <td th:text="${userDAO.email}"></td></tr>
-        <tr><th>Número de telefone</th>  <td th:text="${userDAO.phoneNumber}"></td></tr>
+    <div th:each="user : ${users}">
+        <tr><th>Nome completo</th> <td th:text="${user.fullName}" ></td> </tr>
+        <tr><th>Objetivo</th> <td th:text="${user.ride}" ></td> </tr>
+        <tr><th>Local de partida</th> <td th:text="${user.initialAddress}"></td></tr>
+        <tr><th>Destino</th> <td th:text="${user.finalAddress}"></td></tr>
+        <tr><th>Hora de partida</th> <td th:text="${user.departureTime}"></td></tr>
+        <tr><th>Email</th> <td th:text="${user.email}"></td></tr>
+        <tr><th>Número de telefone</th>  <td th:text="${user.phoneNumber}"></td></tr>
 
-        <tr ><th>Trajeto</th>  <td><a th:href="@{'/address/{init}/{final}'(init=${userDAO.initialAddress},final=${userDAO.finalAddress})}"> <input id="botao_rota" type="button" value="Rota"></a></td></tr>
+        <tr ><th>Trajeto</th>  <td><a th:href="@{'/address/{init}/{final}'(init=${user.initialAddress},final=${user.finalAddress})}"> <input id="botao_rota" type="button" value="Rota"></a></td></tr>
 
 
     </div>
