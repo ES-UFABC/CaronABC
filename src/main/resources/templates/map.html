@@ -27,8 +27,9 @@
     </ul>
 </nav>
 <body>
-
+<a href="/registro" class="botao_retorna">Retornar</a>
 <div id='map'></div>
+
 <script th:inline="javascript">
     var map = L.map('map').setView([-23.549543, -46.633942], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=n2l1ja5htG40J8f9gKyB', {
@@ -45,6 +46,31 @@
 </body>
 
 <style>
+    .botao_retorna {
+        background-color: transparent;
+        border-radius: 28px;
+        border: 2px solid #FFFFFF;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        align-self: center;
+        text-align: center;
+        width: 20em;
+        font-size: 17px;
+        align-content: center;
+        margin-top: 0.4em;
+        margin-left: 40%;
+        padding: 0.4em 1em;
+        text-decoration: none;
+    }
+    .botao_retorna:hover {
+        background-color:transparent;
+    }
+    .botao_retorna:active {
+        position:relative;
+        top:1px;
+    }
 
     .cabecalho {
         display: flex;
