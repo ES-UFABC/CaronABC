@@ -62,7 +62,7 @@ Ademais, um botão acompanha cada entrada da tabela, esse botão é responsável
 
 <h2>Map API</h2>
 
-![alt text](https://user-images.githubusercontent.com/74436565/168693945-66f9708d-6808-4ebd-83ed-d60a55b1d434.png)
+![alt text](https://user-images.githubusercontent.com/84741834/168694700-eac1fc13-a87f-410e-91e1-7735a16a6523.png)
 
 
 <h2>Diagrama UML</h2>
