@@ -58,12 +58,12 @@ Ademais, um botão acompanha cada entrada da tabela, esse botão é responsável
 
 <h2>Tela de registro</h2>
 
-![alt text][registro](https://user-images.githubusercontent.com/74436565/168693717-f248cdba-1e64-4421-8711-cfad08ea023b.png)
+![alt text](https://user-images.githubusercontent.com/74436565/168693717-f248cdba-1e64-4421-8711-cfad08ea023b.png)
 
 <h2>Map API</h2>
 
-![alt text][map](https://user-images.githubusercontent.com/74436565/168693945-66f9708d-6808-4ebd-83ed-d60a55b1d434.png)
+![alt text](https://user-images.githubusercontent.com/74436565/168693945-66f9708d-6808-4ebd-83ed-d60a55b1d434.png)
 
 
 <h2>Diagrama UML</h2>
-![alt text][diagrama](https://user-images.githubusercontent.com/74436565/168693384-a05e41e6-3e92-4707-8458-69de0619bce4.png)
+![alt text](https://user-images.githubusercontent.com/74436565/168693384-a05e41e6-3e92-4707-8458-69de0619bce4.png)
